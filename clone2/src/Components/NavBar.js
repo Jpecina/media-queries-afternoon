@@ -1,18 +1,25 @@
 import React from 'react';
 
 function NavBar(){
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        console.log("Fired")
+        if (x && x.className === "topnav") {
+            x.className += " responsive";
+        } else if (x) {
+            x.className = "topnav";
+        }
+    }
     return (
+        <div className="topnav" id="myTopnav">
+        <div> <h1 className="logo">Start Bootstrap</h1> </div>
         <div>
-            <div className = "nav-bar">
-                <ul className="nav-item">SERVICES</ul>
-                <ul className="nav-item">PORTFOLIO</ul>
-                <ul className="nav-item">ABOUT</ul>
-                <ul className="nav-item">TEAM</ul>
-                <ul className="nav-item">CONTACT</ul>
-            </div>
-            <div className="nav-large">
-            
-            </div>
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" className="icon" onclick={()=>{}}>&#9776;</a>
+        </div>
         </div>
     )
 }
